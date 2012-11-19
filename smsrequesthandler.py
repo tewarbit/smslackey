@@ -1,6 +1,7 @@
 import webapp2
 import logging
 import collections
+import re
 import StringIO
 import lxml.html
 from google.appengine.api import urlfetch
@@ -36,17 +37,25 @@ class SmsRequestHandler(webapp2.RequestHandler):
 		
 		return movies
 		
+	def filter_out_movies(self, movie_infos, query):
+		def filter_fn(val): return any((query.lower() in re.findall(r"[\w']+", item[0].lower())) for item in val)
+		
+		def filter_movies(movie_list):
+			return [item for item in movie_list if query.lower() in re.findall(r"[\w']+", item[0].lower())]
+		
+		return collections.OrderedDict((k, filter_movies(v)) for k, v in movie_infos.iteritems() if filter_fn(v))
 	
 	def post(self):
 		logging.info('Handling a post request')
 		movie_times = self.get_movie_times()
+		movie_times = self.filter_out_movies(movie_times, self.request.get('Body'))
 		logging.info(movie_times)
 		self.response.out.write('<html><body>')
 		self.response.out.write('got message from: ' + self.request.get('From') + '<br/>')
 		self.response.out.write(' with contents: ' + self.request.get('Body') + '<br/>')
 		
-		for k, v in movie_times.iteritems():
-			self.response.out.write(k + ' ' + str(v) + ' <br/>')
+		for k in movie_times.keys()[0:3]:
+			self.response.out.write('<b>' + k + '</b>' + ' ' + str(movie_times[k]) + ' <br/>')
 		self.response.out.write('</pre></body></html>')
 
 	def get(self):
