@@ -32,7 +32,8 @@ class SmsRequestHandler(webapp2.RequestHandler):
 		for movie in movie_nodes:
 			movie_name = movie.xpath('.//div[@class="name"]/a')[0].text
 			logging.info("Finding times for movie name: " + movie_name)
-			movie_times = map(lambda uni: uni.encode('ascii', 'ignore'), movie.xpath('.//div[@class="times"]/span/text()'))
+			unicode_movie_times = re.findall(r"\d{1,2}:\d\d[amp]{0,2}", movie.text_content())
+			movie_times = map(lambda uni: uni.encode('ascii', 'ignore'), unicode_movie_times)
 			movies.append((movie_name, movie_times))
 		
 		return movies
