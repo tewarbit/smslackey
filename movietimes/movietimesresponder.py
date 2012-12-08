@@ -10,6 +10,8 @@ class MovieTimesResponder:
   def respond(self, request):
     movie_times = self.get_movie_times()
     movie_times = self.filter_out_movies(movie_times, request)
+    if (len(movie_times) < 1): return None
+    
     response = movietimerenderer.MovieTimeRenderer.render(movie_times)
     return response
 

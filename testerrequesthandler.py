@@ -2,12 +2,18 @@ import webapp2
 import logging
 import lxml.html
 import StringIO
+import urllib
 from google.appengine.api import urlfetch
 
 class TesterRequestHandler(webapp2.RequestHandler):
   def get(self):
     logging.info("Handling tester request")
-    result = urlfetch.fetch(url="http://www.google.com/search?client=safari&rls=en&q=pizza+house+48103&ie=UTF-8&oe=UTF-8",
+
+    request = 'pizza house'
+    q = { 'q': request + ' 48103' }
+    encoded_q = urllib.urlencode(q)
+
+    result = urlfetch.fetch(url="http://www.google.com/search?client=safari&rls=en&" + encoded_q + "&ie=UTF-8&oe=UTF-8",
                             headers={'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/536.26.17 (KHTML, like Gecko) Version/6.0.2 Safari/536.26.17'})
 
     htmltree = lxml.html.parse(StringIO.StringIO(result.content))

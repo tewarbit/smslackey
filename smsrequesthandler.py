@@ -6,13 +6,14 @@ import StringIO
 import lxml.html
 from google.appengine.api import urlfetch
 from movietimes.movietimesresponder import MovieTimesResponder
+from restaurants.restaurantsresponder import RestaurantsResponder
 from twilio.rest import TwilioRestClient
 from config import twilio
 
 class SmsRequestHandler(webapp2.RequestHandler):
 
   def sms_responders(self):
-    return [MovieTimesResponder()]
+    return [MovieTimesResponder(), RestaurantsResponder()]
 
   def handle_post_request(self, request):
     response = None
@@ -60,4 +61,3 @@ class SmsRequestHandler(webapp2.RequestHandler):
   def get(self):
     self.response.out.write('got a "get" request')
 
-    
