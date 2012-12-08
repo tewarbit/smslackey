@@ -8,6 +8,9 @@ class MovieTimeRenderer:
 		response = MovieTimeRenderer.render_movie_title(movie_title)
 		for k in movie_time_map.keys()[0:3]:
 			response = response + " " + MovieTimeRenderer.render_theater_name(k) + " " + MovieTimeRenderer.render_movie_times(movie_time_map[k][0][1])
+
+		if (len(response) > 160):
+			return response[0:157] + "..."
 		return response
 
 	@staticmethod
