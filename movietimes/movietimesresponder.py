@@ -4,6 +4,7 @@ import lxml.html
 import movietimerenderer
 import re
 import StringIO
+from lackeyresponse import LackeyResponse
 from google.appengine.api import urlfetch
 
 class MovieTimesResponder:
@@ -11,9 +12,9 @@ class MovieTimesResponder:
     movie_times = self.get_movie_times()
     movie_times = self.filter_out_movies(movie_times, request)
     if (len(movie_times) < 1): return None
-    
+
     response = movietimerenderer.MovieTimeRenderer.render(movie_times)
-    return response
+    return LackeyResponse(response, True, None)
 
   def get_movie_times(self):
     logging.info('Looking up movie times')

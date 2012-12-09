@@ -9,7 +9,7 @@ class TesterRequestHandler(webapp2.RequestHandler):
   def get(self):
     logging.info("Handling tester request")
 
-    request = 'pizza house'
+    request = 'Espresso Royale'
     q = { 'q': request + ' 48103' }
     encoded_q = urllib.urlencode(q)
 
@@ -18,6 +18,7 @@ class TesterRequestHandler(webapp2.RequestHandler):
 
     htmltree = lxml.html.parse(StringIO.StringIO(result.content))
     info_block = htmltree.xpath('//div[@id="rhs_block"]')[0]
+    logging.info(self.gettext(info_block))
     addressNodes = info_block.xpath('//span[contains(.,"Address")]')
     if (len(addressNodes) == 0):
       logging.info("No business location found for request")

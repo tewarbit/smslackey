@@ -3,6 +3,7 @@ import logging
 import lxml.html
 import StringIO
 import urllib
+from lackeyresponse import LackeyResponse
 from google.appengine.api import urlfetch
 
 class RestaurantsResponder:
@@ -29,7 +30,9 @@ class RestaurantsResponder:
     response += ". "
     hours = info_block.xpath('//div[@id="hour_now"]')[0]
     response += self.gettext(hours)
-    return response
+    return LackeyResponse(response.encode('ascii', 'ignore'), True, None)
+
+  def is_ascii(self, s): return all(ord(c) < 128 for c in s)
 
   def gettext(self, elem):
     text = elem.text or ""
