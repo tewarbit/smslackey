@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<queryresult success='true'
+    error='false'
+    numpods='0'
+    datatypes='Geometry'
+    timedout='Geometry,PlanetaryAstronomy,Data,Character'
+    timedoutpods=''
+    timing='1.291'
+    parsetiming='0.168'
+    parsetimedout='false'
+    recalculate='http://www5a.wolframalpha.com/api/v2/recalc.jsp?id=MSPa10931g6a98cf1071ba6h00005gb5f88a4h40d8i4&amp;s=44'
+    id='MSPa10941g6a98cf1071ba6h00005548hige3dg2347d'
+    host='http://www5a.wolframalpha.com'
+    server='44'
+    related='http://www5a.wolframalpha.com/api/v2/relatedQueries.jsp?id=MSPa10951g6a98cf1071ba6h00005bgg44d27dhb18g7&amp;s=44'
+    version='2.6'>
+ <assumptions count='1'>
+  <assumption type='Clash'
+      word='square'
+      template='Assuming &quot;${word}&quot; is ${desc1}. Use as ${desc2} instead'
+      count='10'>
+   <value name='Geometry'
+       desc='a geometric object'
+       input='*C.square-_*Geometry-' />
+   <value name='Lamina'
+       desc='a lamina'
+       input='*C.square-_*Lamina-' />
+   <value name='MathWorldClass'
+       desc='a class of mathematical terms'
+       input='*C.square-_*MathWorldClass-' />
+   <value name='Unit'
+       desc='a unit'
+       input='*C.square-_*Unit-' />
+   <value name='Function'
+       desc='a math function'
+       input='*C.square-_*Function-' />
+   <value name='Character'
+       desc='a character'
+       input='*C.square-_*Character-' />
+   <value name='LaminaClass'
+       desc='a class of laminae'
+       input='*C.square-_*LaminaClass-' />
+   <value name='Company'
+       desc='a company'
+       input='*C.square-_*Company-' />
+   <value name='Movie'
+       desc='a movie'
+       input='*C.square-_*Movie-' />
+   <value name='Word'
+       desc='a word'
+       input='*C.square-_*Word-' />
+  </assumption>
+ </assumptions>
+</queryresult>

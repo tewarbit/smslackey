@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<queryresult success='true'
+    error='false'
+    numpods='9'
+    datatypes='People,PlaneCurve'
+    timedout=''
+    timedoutpods=''
+    timing='1.189'
+    parsetiming='0.412'
+    parsetimedout='false'
+    recalculate=''
+    id='MSPa5541bfd1bbg0e94fbcd000016hf0392bb24282f'
+    host='http://www4b.wolframalpha.com'
+    server='25'
+    related='http://www4b.wolframalpha.com/api/v2/relatedQueries.jsp?id=MSPa5551bfd1bbg0e94fbcd00001gc11fh5c0bid9fb&amp;s=25'
+    version='2.6'>
+ <pod title='Input interpretation'
+     scanner='Identity'
+     id='Input'
+     position='100'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <plaintext>circle (plane curve)</plaintext>
+  </subpod>
+ </pod>
+ <pod title='Plot'
+     scanner='Data'
+     id='PlotPod:PlaneCurve'
+     position='200'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <plaintext></plaintext>
+  </subpod>
+ </pod>
+ <pod title='Equations'
+     scanner='Data'
+     id='EquationsPod:PlaneCurve'
+     position='300'
+     error='false'
+     numsubpods='4'>
+  <subpod title='Parametric equations'>
+   <plaintext>x(t) = cos(t) a
+y(t) = sin(t) a</plaintext>
+  </subpod>
+  <subpod title='Cartesian equation'>
+   <plaintext>x^2+y^2 = a^2</plaintext>
+  </subpod>
+  <subpod title='Polar equation'>
+   <plaintext>r(theta) = a</plaintext>
+  </subpod>
+  <subpod title=''>
+   <plaintext>(for a circle with center (0, 0) and radius a)</plaintext>
+  </subpod>
+  <states count='1'>
+   <state name='More'
+       input='EquationsPod:PlaneCurve__More' />
+  </states>
+ </pod>
+ <pod title='Properties'
+     scanner='Data'
+     id='PropertiesPod:PlaneCurve'
+     position='400'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <plaintext>algebraic  |  closed  |  conic  |  constant-width  |  parametric  |  polar  |  quadratic  |  simple</plaintext>
+  </subpod>
+ </pod>
+ <pod title='Basic properties'
+     scanner='Data'
+     id='BasicPropertiesPod:PlaneCurve'
+     position='500'
+     error='false'
+     numsubpods='6'>
+  <subpod title='Radius'>
+   <plaintext>r = a</plaintext>
+  </subpod>
+  <subpod title='Diameter'>
+   <plaintext>d = 2 a</plaintext>
+  </subpod>
+  <subpod title='Circumference'>
+   <plaintext>C = 2 pi a</plaintext>
+  </subpod>
+  <subpod title='Area enclosed'>
+   <plaintext>A = pi a^2</plaintext>
+  </subpod>
+  <subpod title='Arc length'>
+   <plaintext>s = 2 pi a</plaintext>
+  </subpod>
+  <subpod title='Algebraic degree'>
+   <plaintext>d = 2</plaintext>
+  </subpod>
+ </pod>
+ <pod title='Conic properties'
+     scanner='Data'
+     id='ConicPropertiesPod:PlaneCurve'
+     position='600'
+     error='false'
+     numsubpods='1'>
+  <subpod title='Eccentricity'>
+   <plaintext>e = 0</plaintext>
+  </subpod>
+ </pod>
+ <pod title='Derived curves'
+     scanner='Data'
+     id='DerivedCurvesPod:PlaneCurve'
+     position='700'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <plaintext>evolute | point at origin
+involute | circle involute</plaintext>
+  </subpod>
+  <states count='1'>
+   <state name='More'
+       input='DerivedCurvesPod:PlaneCurve__More' />
+  </states>
+ </pod>
+ <pod title='Distance properties'
+     scanner='Data'
+     id='DistancePropertiesPod:PlaneCurve'
+     position='800'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <plaintext>mean line segment length | s^_ = (4 a)/pi
+(where lengths and areas refer to line segments and triangles picked at random from points on the curve)</plaintext>
+  </subpod>
+  <states count='1'>
+   <state name='More'
+       input='DistancePropertiesPod:PlaneCurve__More' />
+  </states>
+ </pod>
+ <pod title='Associated people'
+     scanner='Data'
+     id='AllAssociatedPeoplePod:PlaneCurve'
+     position='900'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <plaintext>Ahmes  |  Thales  |  Euclid  |  Anaxagoras  |  Apollonius of Perga</plaintext>
+  </subpod>
+ </pod>
+ <assumptions count='1'>
+  <assumption type='Clash'
+      word='circle'
+      template='Assuming &quot;${word}&quot; is ${desc1}. Use as ${desc2} instead'
+      count='6'>
+   <value name='PlaneCurve'
+       desc='a plane curve'
+       input='*C.circle-_*PlaneCurve-' />
+   <value name='Geometry'
+       desc='a geometric object'
+       input='*C.circle-_*Geometry-' />
+   <value name='Unit'
+       desc='a unit'
+       input='*C.circle-_*Unit-' />
+   <value name='Character'
+       desc='a character'
+       input='*C.circle-_*Character-' />
+   <value name='MathWorldClass'
+       desc='a class of mathematical terms'
+       input='*C.circle-_*MathWorldClass-' />
+   <value name='Word'
+       desc='a word'
+       input='*C.circle-_*Word-' />
+  </assumption>
+ </assumptions>
+ <sources count='2'>
+  <source url='http://www.wolframalpha.com/sources/PlaneCurveSourceInformationNotes.html'
+      text='Plane curve' />
+  <source url='http://www.wolframalpha.com/sources/PeopleDataSourceInformationNotes.html'
+      text='People data' />
+ </sources>
+</queryresult>

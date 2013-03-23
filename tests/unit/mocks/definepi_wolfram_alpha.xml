@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<queryresult success='true'
+    error='false'
+    numpods='3'
+    datatypes='MathWorld'
+    timedout=''
+    timedoutpods=''
+    timing='0.496'
+    parsetiming='0.173'
+    parsetimedout='false'
+    recalculate=''
+    id='MSPa8421bc3d6dcd9f995i300003cdbc4c6f0c332ha'
+    host='http://www4b.wolframalpha.com'
+    server='32'
+    related='http://www4b.wolframalpha.com/api/v2/relatedQueries.jsp?id=MSPa8431bc3d6dcd9f995i300005283d499icigci9b&amp;s=32'
+    version='2.6'>
+ <pod title='Illustration'
+     scanner='Data'
+     id='ImagePod:MathWorldData'
+     position='100'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <plaintext></plaintext>
+  </subpod>
+ </pod>
+ <pod title='Input interpretation'
+     scanner='Identity'
+     id='Input'
+     position='200'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <plaintext>pi | detailed definition</plaintext>
+  </subpod>
+ </pod>
+ <pod title='Result'
+     scanner='Data'
+     id='DefinitionPod:MathWorldData'
+     position='300'
+     error='false'
+     numsubpods='1'
+     primary='true'>
+  <subpod title=''>
+   <plaintext>The constant pi, denoted pi, is a real number defined as the ratio of a circle&apos;s circumference C to its diameter d = 2r,
+picongruentC/d = C/(2r)
+It is also sometimes called Archimedes&apos; constant or Ludolph&apos;s constant.
+It is equal to
+pi = 3.14159265358979323846264338327950288420...
+(Sloane&apos;s A000796). Pi&apos;s digits have many interesting properties, although not very much is known about their analytic properties. Spigot (Rabinowitz and Wagon 1995, pp. 140-141) and digit-extraction algorithms (the BBP formula) are known for pi.
+Pi&apos;s continued fraction is given by [3, 7, 15, 1, 292, 1, 1, 1, ...]. Its Engel expansion is 1, 1, 1, 8, 8, 17, 19, 300, 1991, 2492, ....</plaintext>
+  </subpod>
+  <states count='1'>
+   <state name='More details'
+       input='DefinitionPod:MathWorldData__More details' />
+  </states>
+  <infos count='1'>
+   <info>
+    <link url='http://mathworld.wolfram.com/Pi.html'
+        text='More information' />
+   </info>
+  </infos>
+ </pod>
+ <assumptions count='1'>
+  <assumption type='MultiClash'
+      word=''
+      template='Assuming ${word1} is referring to ${desc1}. Use &quot;${word2}&quot; as ${desc2}. Use &quot;${word3}&quot; as ${desc3}.'
+      count='3'>
+   <value name='MathWorld'
+       word='pi'
+       desc='referring to a mathematical definition'
+       input='*MC.define+pi-_*MathWorld-' />
+   <value name='MathWorldClass'
+       word='pi'
+       desc='a class of mathematical terms'
+       input='*MC.define+pi-_*MathWorldClass-' />
+   <value name='WordData'
+       word='define pi'
+       desc='referring to English words'
+       input='*MC.define+pi-_*WordData-' />
+  </assumption>
+ </assumptions>
+</queryresult>

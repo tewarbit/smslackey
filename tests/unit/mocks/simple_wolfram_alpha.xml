@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<queryresult success='true'
+    error='false'
+    numpods='2'
+    datatypes=''
+    timedout=''
+    timedoutpods=''
+    timing='0.744'
+    parsetiming='0.232'
+    parsetimedout='false'
+    recalculate=''
+    id='MSPa38591fd683h8bbf3gdhe00003ac7h726f386iff0'
+    host='http://www3.wolframalpha.com'
+    server='19'
+    related='http://www3.wolframalpha.com/api/v2/relatedQueries.jsp?id=MSPa38601fd683h8bbf3gdhe0000150899c3ee4i5h98&amp;s=19'
+    version='2.6'>
+ <pod title='Input interpretation'
+     scanner='Identity'
+     id='Input'
+     position='100'
+     error='false'
+     numsubpods='1'>
+  <subpod title=''>
+   <plaintext>age | of Chuck Norris  (actor) |  today  </plaintext>
+  </subpod>
+ </pod>
+ <pod title='Result'
+     scanner='Age'
+     id='Result'
+     position='200'
+     error='false'
+     numsubpods='1'
+     primary='true'>
+  <subpod title=''>
+   <plaintext>73 years 9 days</plaintext>
+  </subpod>
+  <states count='1'>
+   <state name='Show details'
+       input='Result__Show details' />
+  </states>
+ </pod>
+ <assumptions count='1'>
+  <assumption type='MultiClash'
+      word=''
+      template='Assuming ${word1} is referring to ${desc1}. Use &quot;${word2}&quot; as ${desc2}.'
+      count='2'>
+   <value name='Person'
+       word='chuck norris'
+       desc='a person'
+       input='*MC.chuck+norris-_*Person-' />
+   <value name='GivenName'
+       word='chuck'
+       desc='a given name'
+       input='*MC.chuck+norris-_*GivenName-' />
+  </assumption>
+ </assumptions>
+ <sources count='1'>
+  <source url='http://www.wolframalpha.com/sources/PeopleDataSourceInformationNotes.html'
+      text='People data' />
+ </sources>
+</queryresult>

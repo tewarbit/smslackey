@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>Welcome to the smslackey!</title>
+    <script type="text/javascript" src="js/simpleajax.js"></script>
+    <script type="text/javascript" src="js/handling.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/home.css">
+  </head>
+  <body>
+    <div style="height:100%; width:100%;">
+      <img src="images/smslackey.png" style="padding:5px" />
+      <div class="form">
+
+        <p class="name">
+          <input type="text" name="query" id="query" />
+          <label for="query">Query It</label>
+        </p>
+
+        <p class="phone_number">
+          <input type="text" name="phone_number" id="phone_number" />
+          <label for="phone_number">Send Response To</label>
+        </p>
+
+        <p class="submit">
+          <button onclick="myFunction()">Go</button>
+        </p>
+
+        <!--p class="responsearea">
+          <textarea name="response" id="response"></textarea>
+          <label for="response">Response</label>
+        </p-->
+        <br/>
+        <label for="response">Response:</label>
+        <div id='putresponse' class="responsebox">
+          <!--img src="images/loading.gif"/-->
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>      
