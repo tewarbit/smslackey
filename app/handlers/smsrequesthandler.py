@@ -51,6 +51,7 @@ class SmsRequestHandler(webapp2.RequestHandler):
 
     from_number = self.validateInputNumber(self.request.get('From'))
     zip_code = self.get_zip_code(from_number)
+    logging.info("Looking up results relative to zipcode: %s" % zip_code)
     req = LackeyRequest(self.request.get('Body'), from_number, zip_code)
     
     logging.info('Handling a post request from: %(num)s with body: %(q)s' % {"num": from_number, "q": req.query})

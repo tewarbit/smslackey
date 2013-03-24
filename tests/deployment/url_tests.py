@@ -4,7 +4,7 @@
 import requests
 import unittest
 
-class TestPaperAPI(unittest.TestCase):
+class TestSMSLackeyAPI(unittest.TestCase):
 
   def setUp(self):
     self.base_url = "http://smslackey.appspot.com/sms"
