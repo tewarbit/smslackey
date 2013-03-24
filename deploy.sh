@@ -2,7 +2,7 @@
 
 echo
 echo "------"
-echo "deploying app to Google App Engine"
+echo "Deploying app to Google App Engine"
 echo "------"
 echo
 
@@ -10,6 +10,20 @@ appcfg.py update .
 
 echo
 echo "------"
-echo "app successfully deployed!"
+echo "App successfully deployed!"
+echo "------"
+echo
+
+echo
+echo "------"
+echo "Running deployment tests"
+echo "------"
+echo
+
+python -m unittest discover tests/deployment '*_tests.py' -v
+
+echo
+echo "------"
+echo "Finished"
 echo "------"
 echo
