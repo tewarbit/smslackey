@@ -22,6 +22,9 @@ def init():
   url = "http://api.wolframalpha.com/v2/query?input=define+pi&format=plaintext&appid=" + wolfram_alpha['appid']
   urlcache[url] = open("tests/unit/mocks/definepi_wolfram_alpha.xml").read()
 
+  url = "http://api.wolframalpha.com/v2/query?input=zip+code+kokomo+in&format=plaintext&appid=" + wolfram_alpha['appid']
+  urlcache[url] = open("tests/unit/mocks/zipcode_wolfram_alpha.xml").read()
+
 def get(url):
   
   # first check if it has the exact URL in the cache

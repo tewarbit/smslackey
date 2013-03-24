@@ -21,7 +21,7 @@ from app.responders.movietimes.movietimesresponder import MovieTimesResponder
 from app.responders.weatherresponder import WeatherResponder
 from app.responders.placesresponder import PlacesResponder
 from app.responders.caller.callerresponder import CallerResponder
-from app.responders.setzipcoderesponder import SetZipCodeResponder
+from app.responders.zipcoderesponder import ZipCodeResponder
 from app.responders.simplegoogleresponder import SimpleGoogleResponder
 from app.responders.notes.writenoteresponder import WriteNoteResponder
 from app.responders.recorder.recorderresponder import RecorderResponder
@@ -29,6 +29,7 @@ from app.responders.playmessageresponder import PlayMessageResponder
 from app.responders.wolframalpharesponder import WolframAlphaResponder
 from app.responders.wikipediaresponder import WikipediaResponder
 
+from app.db import lackeydb
 from app.types.messages import LackeyRequest
 
 class SmsRequestHandler(webapp2.RequestHandler):
@@ -38,7 +39,7 @@ class SmsRequestHandler(webapp2.RequestHandler):
     return [ WriteNoteResponder(), 
              RecorderResponder(), 
              PlayMessageResponder(), 
-             SetZipCodeResponder(), 
+             ZipCodeResponder(), 
              MovieTimesResponder(), 
              WeatherResponder(), 
              PlacesResponder(), 
@@ -90,9 +91,6 @@ class SmsRequestHandler(webapp2.RequestHandler):
   
   
   def sendTwilioResponse(self, resp, send_to):
-    # self.renderHtmlResponse(resp)
-    # return None
-
     client = TwilioRestClient(twilio['account'], twilio['token'])
     if not resp.is_sms:
       client.calls.create(to=resp.respond_to_num,
@@ -119,13 +117,8 @@ class SmsRequestHandler(webapp2.RequestHandler):
   def get_zip_code(self, num):
     if not num: num = "X"
 
-    q = db.GqlQuery("SELECT * "
-                    "FROM ZipCode "
-                    "WHERE phone_number = '" + num + "' ")
-
-    z_code = q.get()
+    z_code = lackeydb.get_zipcode(num)
     if not z_code: return zipcode
-    
     
     zipcodestring = z_code.zipcode
     if (type(zipcodestring) is unicode): zipcodestring = zipcodestring.encode('ascii', 'ignore')

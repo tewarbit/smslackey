@@ -22,6 +22,20 @@ class SmsRequestHandlerTests(unittest.TestCase):
     mocks.shutdown()
 
 
+  def test_zipcode(self):
+    expected = "zipcode set to 48103"
+    self.do_test("set zip 48103", "7342394484", expected, True, "7342394484")
+
+    expected = "48103"
+    self.do_test("get zip", "7342394484", expected, True, "7342394484")
+
+    expected = "zipcode set to 46901"
+    self.do_test("set zip kokomo in", "7342394484", expected, True, "7342394484")
+
+    expected = "46901"
+    self.do_test("get zip", "7342394484", expected, True, "7342394484")    
+
+
   def test_weather(self):
     expected = ( "30F(~22). M: Overcast w snow showers, then mostly cloudy "
                  "w snow showers. H 34F, wchill 5F. E: Part cloudy w snow showers. "

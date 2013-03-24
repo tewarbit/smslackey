@@ -1,0 +1,46 @@
+<queryresult success="true" error="false" numpods="5" datatypes="City,Country,USCounty,USState,ZIPCode" timedout="" timedoutpods="" timing="2.968" parsetiming="0.271" parsetimedout="false" recalculate="" id="MSPa2558211ebd0iaa9gg1ab00002515dbeh5bcffi64" host="http://www2.wolframalpha.com" server="5" related="http://www2.wolframalpha.com/api/v2/relatedQueries.jsp?id=MSPa2559211ebd0iaa9gg1ab00004d60bi77f0i89e58&amp;s=5" version="2.6">
+<pod title="Input interpretation" scanner="Identity" id="Input" position="100" error="false" numsubpods="1">
+<subpod title="">
+<plaintext>ZIP codes | in Kokomo, Indiana</plaintext>
+</subpod>
+</pod>
+<pod title="Result" scanner="Data" id="Result" position="200" error="false" numsubpods="1" primary="true">
+<subpod title="">
+<plaintext>IN 46901 IN 46902 IN 46903 IN 46904</plaintext>
+</subpod>
+</pod>
+<pod title="Location" scanner="Data" id="Location:ZIPCodeData" position="300" error="false" numsubpods="2">
+<subpod title="">
+<plaintext>
+| county IN 46901 | Howard County, Indiana | Cass County, Indiana IN 46902 | Howard County, Indiana IN 46903 | Howard County, Indiana IN 46904 | Howard County, Indiana
+</plaintext>
+</subpod>
+<subpod title="">
+<plaintext>
+| location (all cases) | Kokomo, Indiana, United States
+</plaintext>
+</subpod>
+<states count="1">
+<state name="More" input="Location:ZIPCodeData__More"/>
+</states>
+</pod>
+<pod title="Economic properties" scanner="Data" id="EconomicProperties:ZIPCodeData" position="400" error="false" numsubpods="1">
+<subpod title="">
+<plaintext>
+business establishments | median | 415.5 | highest | 839 (IN 46901) | lowest | 22 (IN 46903) total employment | median | 6042 people | highest | 17071 people (IN 46902) | lowest | 403 people (IN 46903) | distribution | annual payroll | median | $208 million (US dollars) | highest | $968.6 million (US dollars) (IN 46902) | lowest | $16.14 million (US dollars) (IN 46903) | distribution | (based on 2009 business census)
+</plaintext>
+</subpod>
+</pod>
+<pod title="Sales tax" scanner="Data" id="SalesTaxInformation:ZIPCodeData" position="500" error="false" numsubpods="1">
+<subpod title="">
+<plaintext>
+state sales tax | median | 7% | highest | 7% (4 ZIP codes) | lowest | 7% (4 ZIP codes) county sales tax | median | 0% | highest | 0% (4 ZIP codes) | lowest | 0% (4 ZIP codes) city sales tax | median | 0% | highest | 0% (4 ZIP codes) | lowest | 0% (4 ZIP codes) total sales tax | median | 7% | highest | 7% (4 ZIP codes) | lowest | 7% (4 ZIP codes)
+</plaintext>
+</subpod>
+</pod>
+<sources count="3">
+<source url="http://www.wolframalpha.com/sources/CityDataSourceInformationNotes.html" text="City data"/>
+<source url="http://www.wolframalpha.com/sources/USTaxDataSourceInformationNotes.html" text="US tax data"/>
+<source url="http://www.wolframalpha.com/sources/ZIPCodeDataSourceInformationNotes.html" text="ZIP code data"/>
+</sources>
+</queryresult>
